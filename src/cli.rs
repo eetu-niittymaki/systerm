@@ -17,5 +17,5 @@ pub enum Commands {
     GPU,
     Memory,
     Disk,
-    System
+    Os
 }

@@ -10,7 +10,7 @@ use crate::commands::{
     cpu::CpuView, 
     memory::MemoryView,
     disk::DiskView,
-    system::SystemView,
+    os::OsView,
 };
 
 pub struct Ui {
@@ -24,7 +24,7 @@ impl Ui {
             Commands::Memory => Box::new(MemoryView::new()),
             Commands::GPU => todo!(),
             Commands::Disk => Box::new(DiskView::new()),
-            Commands::System => Box::new(SystemView::new())
+            Commands::Os => Box::new(OsView::new())
         };
 
         Self { active }

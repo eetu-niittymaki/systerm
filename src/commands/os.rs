@@ -9,14 +9,14 @@ use ratatui::{
 
 use super::Command;
 
-pub struct SystemView {
+pub struct OsView {
     name: String,
     kernel: String,
     os_version: String,
     host: String
 }
 
-impl SystemView {
+impl OsView {
     pub fn new() -> Self {
         let sys_name = System::name();
         let sys_kernel = System::kernel_version();
@@ -33,7 +33,7 @@ impl SystemView {
 
 }
 
-impl Command for SystemView {
+impl Command for OsView {
     fn tick(&mut self) {}
 
     fn draw(&self, frame: &mut Frame, _area: Rect) {
