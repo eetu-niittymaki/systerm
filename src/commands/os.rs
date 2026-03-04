@@ -71,7 +71,7 @@ fn calculate_layout(area: Rect) -> (Rect, Vec<Vec<Rect>>) {
 
 fn render_title(frame: &mut Frame, area: Rect) {
     frame.render_widget(
-        Paragraph::new("System Info. Press 'q' to quit")
+        Paragraph::new("OS Info. Press 'q' to quit")
             .dark_gray()
             .alignment(Alignment::Center),
         area,
