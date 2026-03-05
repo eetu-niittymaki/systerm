@@ -9,6 +9,13 @@
 ## Usage
 
 ### systerm COMMAND 
+## Commands
+### cpu - Display CPU usage graph
+### memory - Display memory usage graph
+### disk - Display disk usage information
+### os - Display operating system information
+### network - Display network information
+### help - List of commands
 
 ## Installation
 
