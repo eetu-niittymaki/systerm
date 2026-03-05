@@ -11,6 +11,7 @@ use crate::commands::{
     memory::MemoryView,
     disk::DiskView,
     os::OsView,
+    network::NetworkView
 };
 
 pub struct Ui {
@@ -24,7 +25,8 @@ impl Ui {
             Commands::Memory => Box::new(MemoryView::new()),
             Commands::GPU => todo!(),
             Commands::Disk => Box::new(DiskView::new()),
-            Commands::Os => Box::new(OsView::new())
+            Commands::Os => Box::new(OsView::new()),
+            Commands::Network => Box::new(NetworkView::new())
         };
 
         Self { active }

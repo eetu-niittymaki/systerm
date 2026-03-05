@@ -2,6 +2,14 @@
 name = "systerm"
 version = "0.1.0"
 edition = "2024"
+authors = ["Eetu Niittymäki <eetu945@gmail.com>"]
+license = "MIT OR Apache-2.0"
+description = "CLI system monitoring tool written in Rust, using ratatui and sysinfo"
+readme = "README.md"
+homepage = "https://github.com/eetu-niittymaki/systerm"
+repository = "https://github.com/eetu-niittymaki/systerm"
+keywords = ["cli", "system", "ratatui", "sysinfo"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 clap = { version = "4.5.60", features = ["derive"] }

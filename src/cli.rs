@@ -22,5 +22,7 @@ pub enum Commands {
     /// Display disk usage information
     Disk,
     /// Display operating system information
-    Os
+    Os,
+    /// Display network information
+    Network
 }

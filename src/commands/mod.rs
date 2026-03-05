@@ -5,6 +5,7 @@ pub mod gpu;
 pub mod memory;
 pub mod disk;
 pub mod os;
+pub mod network;
 
 pub trait Command {
     fn tick(&mut self);

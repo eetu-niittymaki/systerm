@@ -85,7 +85,6 @@ fn calculate_layout(area: Rect, disk_count: usize) -> (Rect, Vec<Rect>) {
     // Calculate number of rows (2 disks per row)
     let rows = (disk_count + 1) / 2;
 
-    // Create vertical row constraints
     let row_constraints = vec![Constraint::Length(4); rows];
 
     let row_areas = Layout::vertical(row_constraints).split(main_area);
