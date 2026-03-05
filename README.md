@@ -7,3 +7,14 @@
 ![image](https://i.postimg.cc/vZv6nPwD/ezgif-41f228ee8ed54e7b.gif)
 
 ## Usage
+
+### systerm COMMAND 
+
+## Installation
+
+### https://github.com/eetu-niittymaki/systerm/releases/latest
+### Download and run install.ps1 to download, extract and add extracted binaries to PATH
+
+### OR
+
+### Download systerm.zip and extract and set PATH manually

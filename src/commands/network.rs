@@ -3,13 +3,12 @@ use sysinfo::Networks;
 
 use ratatui::{
     Frame,
-    layout::{Alignment, Constraint, Layout, Rect},
+    layout::{Constraint, Layout, Rect},
     style::{Color, Style, Stylize},
-    text::{Line, Text},
-    widgets::{Block, Borders, Gauge, Paragraph, Wrap},
+    text::Line,
+    widgets::{Block, Borders, Gauge, Paragraph},
 };
 
-use crate::commands::network;
 
 use super::Command;
 
