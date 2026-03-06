@@ -1,4 +1,4 @@
-use sysinfo::System;
+use sysinfo::{System, RefreshKind, CpuRefreshKind};
 
 use ratatui::{
     layout::Rect,
@@ -15,19 +15,35 @@ pub struct CpuView {
     data: Vec<(f64, f64)>,
     window: [f64; 2],
     x: f64,
+    cpu_name: String,
+    cpu_freq_ghz: f64,
 }
 
 impl CpuView {
     pub fn new() -> Self {
-        let mut sys = System::new_all();
+        let mut sys = System::new_with_specifics(
+    RefreshKind::nothing().with_cpu(CpuRefreshKind::everything()),
+        );
+
         sys.refresh_cpu_usage();
         std::thread::sleep(sysinfo::MINIMUM_CPU_UPDATE_INTERVAL);
+
+        let (cpu_name, cpu_freq_ghz) = {
+        let cpu = sys.cpus().first().expect("No CPU found");
+        (
+            cpu.brand().to_string(),
+            cpu.frequency() as f64 / 1000.0,
+        )
+        }; 
 
         Self {
             sys,
             data: Vec::with_capacity(120),
             window: [0.0, 120.0],
             x: 0.0,
+            cpu_name: cpu_name.to_string(),
+            cpu_freq_ghz: cpu_freq_ghz
+
         }
     }
 
@@ -74,7 +90,12 @@ impl Command for CpuView {
                 Axis::default()
                     .bounds(self.window)
                     .labels(vec![
-                        Span::raw(""),
+                        Span::styled(
+                            format!("{}", self.cpu_name),
+                            Style::default()
+                                .fg(Color::Blue)
+                                .add_modifier(Modifier::BOLD),
+                        ),
                         Span::styled(
                             format!("{:.1}% Used", self.data.last().map(|(_, y)| *y).unwrap_or(0.0)),
                             Style::default()
