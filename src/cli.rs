@@ -13,13 +13,13 @@ pub struct Cli {
 
 #[derive(Subcommand, Clone)]
 pub enum Commands {
+    /// Display GPU device information
+    GPU,
     /// Display CPU usage graph
     CPU,
-    /// Display GPU usage graph
-    GPU,
     /// Display memory usage graph
     Memory,
-    /// Display disk usage information
+    /// Display disk storage information
     Disk,
     /// Display operating system information
     Os,

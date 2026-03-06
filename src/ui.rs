@@ -8,6 +8,7 @@ use crate::cli::Commands;
 use crate::commands::{
     Command, 
     cpu::CpuView, 
+    gpu::GpuView, 
     memory::MemoryView,
     disk::DiskView,
     os::OsView,
@@ -22,8 +23,8 @@ impl Ui {
     pub fn new(command: Commands) -> Self {
         let active: Box<dyn Command> = match command {
             Commands::CPU => Box::new(CpuView::new()),
+            Commands::GPU => Box::new(GpuView::new()),
             Commands::Memory => Box::new(MemoryView::new()),
-            Commands::GPU => todo!(),
             Commands::Disk => Box::new(DiskView::new()),
             Commands::Os => Box::new(OsView::new()),
             Commands::Network => Box::new(NetworkView::new())
